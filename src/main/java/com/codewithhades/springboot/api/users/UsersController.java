@@ -32,20 +32,20 @@ public class UsersController {
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody UserBody body) {
-        User user = new User(body.getName(), body.getSurname());
+    public ResponseEntity<User> addUser(@RequestBody UserRequest userRequest) {
+        User user = new User(userRequest.getName(), userRequest.getSurname());
         users.add(user);
         return ResponseEntity.ok(user);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody UserBody body) {
+    public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody UserRequest userRequest) {
         return users.stream()
                 .filter(user -> user.getId().equals(id))
                 .findFirst()
                 .map(user -> {
-                    user.setName(body.getName());
-                    user.setSurname(body.getSurname());
+                    user.setName(userRequest.getName());
+                    user.setSurname(userRequest.getSurname());
                     return user;
                 })
                 .map(ResponseEntity::ok)
@@ -63,26 +63,6 @@ public class UsersController {
         } else {
             return ResponseEntity.noContent().build();
         }
-    }
-
-    private static class UserBody {
-
-        private final String name;
-        private final String surname;
-
-        public UserBody(String name, String surname) {
-            this.name = name;
-            this.surname = surname;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public String getSurname() {
-            return surname;
-        }
-
     }
 
 }

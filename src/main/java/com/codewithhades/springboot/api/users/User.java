@@ -2,11 +2,15 @@ package com.codewithhades.springboot.api.users;
 
 import java.util.UUID;
 
-public class User {
+class User {
 
-    private final String id;
+    private String id;
     private String name;
     private String surname;
+
+    //For Jackson
+    private User() {
+    }
 
     public User(String name, String surname) {
         this.id = UUID.randomUUID().toString();
@@ -33,5 +37,4 @@ public class User {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
 }
