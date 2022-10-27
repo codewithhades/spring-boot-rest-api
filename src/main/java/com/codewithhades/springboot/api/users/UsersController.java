@@ -1,13 +1,12 @@
 package com.codewithhades.springboot.api.users;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-@Controller
+@RestController
 @RequestMapping("/api/users")
 public class UsersController {
 

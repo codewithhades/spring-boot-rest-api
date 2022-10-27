@@ -12,7 +12,16 @@ In this example you can check how to create an API in a Spring Boot application.
 
 You can check how to set a Spring Boot application up with the basics [in this example](https://github.com/codewithhades/spring-boot-basic-setup)
 
-## How to build it
+## How to create the API
+
+To create an API we simply need to annotate a class with @RestController and add the path where the API will be mapped.
+
+````java
+@RestController
+@RequestMapping("/api/users")
+public class UsersController{
+}
+````
 
 ## How to run it
 
@@ -32,9 +41,15 @@ En este ejemplo podrás ver cómo crear una API en una aplicación Spring Boot.
 
 Puedes ver cómo configurar una aplicación Spring Boot con lo básico [en este ejemplo](https://github.com/codewithhades/spring-boot-basic-setup)
 
+## Cómo crear la API
 
-## Requisitos
+Para crear una API simplemente necesitamos anotar una clase con @RestController y añadir el path donde se mapeará la API.
 
-## Cómo construirlo
+````java
+@RestController
+@RequestMapping("/api/users")
+public class UsersController{
+}
+````
 
 ## Cómo arrancarlo
