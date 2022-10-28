@@ -10,7 +10,7 @@ It provides production-ready features like metrics or health-checks and simplifi
 
 In this example you can check how to create an API in a Spring Boot application.
 
-You can check how to set a Spring Boot application up with the basics [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
+If you need some help at setting a Spring Boot application up you can check how  [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
 
 ## How to create the API
 
@@ -49,7 +49,7 @@ Proporciona herramientas listas para producción como métricas o health-checks,
 
 En este ejemplo podrás ver cómo crear una API en una aplicación Spring Boot.
 
-Puedes ver cómo configurar una aplicación Spring Boot con lo básico [en este ejemplo](https://github.com/codewithhades/spring-boot-basic-setup).
+Si necesitas ayuda para configurar una aplicación Spring Boot puedes ver cómo [en este ejemplo](https://github.com/codewithhades/spring-boot-basic-setup).
 
 ## Cómo crear la API
 
@@ -62,9 +62,9 @@ Para crear una API simplemente necesitamos anotar una clase con @RestController 
 
 Una vez anotada es cuestión de añadir tus métodos API como hemos hecho en [UsersController](src/main/java/com/codewithhades/springboot/api/users/UsersController.java).
 
-Los métodos API heredan el path base de la API y pueden opcionalmente concatenar su propio path.
+Los métodos API heredan el path de base de la API y pueden opcionalmente concatenar su propio path.
 
-También soportan variables en el path, parámetro para el body de la petición, tipo de contenido como abecera y mucho más.
+También soportan variables en el path, parámetro para el body de la petición, tipo de contenido como cabecera y mucho más.
 
 ````java
 @PutMapping("/{id}")
