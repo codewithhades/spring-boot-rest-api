@@ -18,10 +18,20 @@ To create an API we simply need to annotate a class with @RestController and add
 
 ````java
 @RestController
-@RequestMapping("/api/users")
-public class UsersController{
+@RequestMapping("/your_api_path")
+````
+Then it is just a matter of adding your API methods as we did with [UsersController](src/main/java/com/codewithhades/springboot/api/users/UsersController.java).
+
+API methods inherit the base API path and they can optionally concat their own path.
+
+They also support path variables, request body parameter, content type headers and many more.
+
+````java
+@PutMapping("/{id}")
+public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody UserRequest userRequest) {
 }
 ````
+
 
 ## How to run it
 
@@ -47,8 +57,18 @@ Para crear una API simplemente necesitamos anotar una clase con @RestController 
 
 ````java
 @RestController
-@RequestMapping("/api/users")
-public class UsersController{
+@RequestMapping("/tu_API_path")
+````
+
+Una vez anotada es cuestión de añadir tus métodos API como hemos hecho en [UsersController](src/main/java/com/codewithhades/springboot/api/users/UsersController.java).
+
+Los métodos API heredan el path base de la API y pueden opcionalmente concatenar su propio path.
+
+También soportan variables en el path, parámetro para el body de la petición, tipo de contenido como abecera y mucho más.
+
+````java
+@PutMapping("/{id}")
+public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody UserRequest userRequest) {
 }
 ````
 
