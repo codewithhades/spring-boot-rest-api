@@ -8,9 +8,9 @@ It provides production-ready features like metrics or health-checks and simplifi
 
 ## About this example
 
-In this example you can check how to create an API in a Spring Boot application.
+In this example you can check how to create an API (Application Programming Interface) in a Spring Boot application.
 
-If you need some help at setting a Spring Boot application up you can check how  [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
+But before we continue you need to set a Spring Boot application up. If you need some help you can check how  [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
 
 ## How to create the API
 
@@ -67,9 +67,9 @@ Proporciona herramientas listas para producción como métricas o health-checks,
 
 ## Acerca de este proyecto
 
-En este ejemplo podrás ver cómo crear una API en una aplicación Spring Boot.
+En este ejemplo podrás ver cómo crear una API (Application Programming Interface) en una aplicación Spring Boot.
 
-Si necesitas ayuda para configurar una aplicación Spring Boot puedes ver cómo [en este ejemplo](https://github.com/codewithhades/spring-boot-basic-setup).
+Pero antes que nada, necesitarás tener configurada una aplicación Spring Boot. Si necesitas ayuda con esto puedes ver cómo hacerlo [en este ejemplo](https://github.com/codewithhades/spring-boot-basic-setup).
 
 ## Cómo crear la API
 
