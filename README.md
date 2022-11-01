@@ -1,4 +1,4 @@
-# Spring Boot :pencil2: API
+# Spring Boot :pencil2: REST API
 
 ## About Spring Boot and this example
 
