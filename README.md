@@ -24,12 +24,7 @@ To create a REST API we simply need to annotate a class with @RestController and
 ````
 Then it is just a matter of adding your REST API methods as we did with [UsersController](src/main/java/com/codewithhades/springboot/restapi/users/UsersController.java).
 
-REST API methods inherit the base REST API path and can optionally concat their own path as well as use path variables.
-
-````java
-@GetMapping("/{id}")
-````
-They also support request body parameter, content type headers, validations and many more.
+REST API methods inherit the base REST API path and can optionally concat their own path as well as use path variables. They also support request body parameter, content type headers, validations and many more.
 
 ````java
 @PutMapping("/{id}")
