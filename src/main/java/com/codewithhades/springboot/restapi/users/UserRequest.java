@@ -1,4 +1,4 @@
-package com.codewithhades.springboot.api.users;
+package com.codewithhades.springboot.restapi.users;
 
 class UserRequest {
 

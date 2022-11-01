@@ -1,4 +1,4 @@
-package com.codewithhades.springboot.api.users;
+package com.codewithhades.springboot.restapi.users;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
