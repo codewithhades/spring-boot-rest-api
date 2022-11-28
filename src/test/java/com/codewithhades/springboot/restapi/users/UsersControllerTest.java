@@ -23,27 +23,19 @@ class UsersControllerTest {
 
     @Test
     void usersControllerIntegrationTest() throws Exception {
-
-        checkUsersCount(0);
-
-        User obiWan = postAndReturnUser(new UserRequest("Obi-Wan", "Kenobi"));
-        checkUserData(obiWan);
-
-        User anakin = postAndReturnUser(new UserRequest("Anakin", "Skywalker"));
-        checkUserData(anakin);
-
-        checkUsersCount(2);
-
-        User darthVader = updateAndReturnUser(anakin.getId(), new UserRequest("Darth", "Vader"));
-        checkUserData(darthVader);
-
-        deleteUserAndCheck(darthVader);
-
-        checkUsersCount(1);
-
+        countOfUsersShouldBe(0);
+        User obiWan = userShouldBeAdded(new UserRequest("Obi-Wan", "Kenobi"));
+        userShouldBeRetrievable(obiWan);
+        User anakin = userShouldBeAdded(new UserRequest("Anakin", "Skywalker"));
+        userShouldBeRetrievable(anakin);
+        countOfUsersShouldBe(2);
+        User darthVader = userShouldBeUpdated(anakin.getId(), new UserRequest("Darth", "Vader"));
+        userShouldBeRetrievable(darthVader);
+        userShouldBeDeleted(darthVader);
+        countOfUsersShouldBe(1);
     }
 
-    private User postAndReturnUser(UserRequest userRequest) throws Exception {
+    private User userShouldBeAdded(UserRequest userRequest) throws Exception {
         String responseContent = mockMvc
                 .perform(post("/api/users").contentType(MediaType.APPLICATION_JSON).content(getJsonStringFromBody(userRequest)))
                 .andExpect(status().isOk())
@@ -53,13 +45,13 @@ class UsersControllerTest {
         return getUserFromJsonString(responseContent);
     }
 
-    private void checkUsersCount(int count) throws Exception {
+    private void countOfUsersShouldBe(int count) throws Exception {
         mockMvc.perform(get("/api/users").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(count)));
     }
 
-    private void checkUserData(User user) throws Exception {
+    private void userShouldBeRetrievable(User user) throws Exception {
         mockMvc
                 .perform(get("/api/users/" + user.getId()).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -69,7 +61,7 @@ class UsersControllerTest {
                 .andReturn().getResponse().getContentAsString();
     }
 
-    private User updateAndReturnUser(String id, UserRequest userRequest) throws Exception {
+    private User userShouldBeUpdated(String id, UserRequest userRequest) throws Exception {
         String responseContent = mockMvc
                 .perform(put("/api/users/" + id).contentType(MediaType.APPLICATION_JSON).content(getJsonStringFromBody(userRequest)))
                 .andExpect(status().isOk())
@@ -80,7 +72,7 @@ class UsersControllerTest {
         return getUserFromJsonString(responseContent);
     }
 
-    private void deleteUserAndCheck(User user) throws Exception {
+    private void userShouldBeDeleted(User user) throws Exception {
         mockMvc
                 .perform(delete("/api/users/" + user.getId()).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
