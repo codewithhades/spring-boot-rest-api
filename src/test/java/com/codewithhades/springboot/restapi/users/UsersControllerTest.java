@@ -22,7 +22,7 @@ class UsersControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    void usersControllerShouldOperate() throws Exception {
+    void usersControllerIntegrationTest() throws Exception {
 
         checkUsersCount(0);
 
