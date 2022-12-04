@@ -12,7 +12,7 @@ A REST API is an application programming interface that follows the REST archite
 
 ## Technical requirements
 
-The only requirement is that you have a running Spring Boot application. If you need some help at setting it up you can check how  [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
+The only requirement is that you have a Spring Boot project. If you need some help at setting it up you can check how [in this example](https://github.com/codewithhades/spring-boot-basic-setup).
 
 ## How to create the REST API
 
